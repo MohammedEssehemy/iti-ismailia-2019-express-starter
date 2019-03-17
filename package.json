@@ -1,0 +1,22 @@
+{
+  "name": "ecommerce",
+  "version": "1.0.0",
+  "private": false,
+  "main": "./bin/www",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon .",
+    "debug": "nodemon --inspect ."
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.3",
+    "data-store": "^3.1.0",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "morgan": "~1.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "products": {
+    "1": {
+      "id": 1,
+      "name": "black bag",
+      "description": "black bag, leather",
+      "price": 50,
+      "discount": 0.5,
+      "isOnSale": true,
+      "tags": [
+        "bag",
+        "accessories"
+      ],
+      "category": "accessories"
+    },
+    "2": {
+      "id": 2,
+      "name": "white bag",
+      "description": "white bag, leather",
+      "price": 70,
+      "discount": 0.3,
+      "isOnSale": false,
+      "tags": [
+        "bag",
+        "accessories"
+      ],
+      "category": "accessories"
+    },
+    "3": {
+      "name": "laptop2",
+      "id": 3
+    }
+  },
+  "category": {
+
+  }
+}
