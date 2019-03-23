@@ -1,4 +1,2 @@
-const Store = require('data-store');
-const db = new Store({ path: '.config/store.json' });
-
-module.exports = db;
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:27017/ecommerce',  { useNewUrlParser: true });
