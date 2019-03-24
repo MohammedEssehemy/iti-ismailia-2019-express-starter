@@ -7,10 +7,12 @@ const authenticationMiddleware = require('./../middlewares/authentication');
 // base /users
 // register user
 router.post('/', (req, res, next) => {
+
+
   const { username, password } = req.body;
   const user = new User({ username, password });
-  user.save((err)=>{
-    if(err) return next(createError(400, err));
+  user.save((err) => {
+    if (err) return next(createError(400, err));
     res.send(user);
   });
 });
@@ -19,17 +21,17 @@ router.post('/', (req, res, next) => {
 // authenticate user
 router.post('/login', async (req, res, next) => {
   const { username, password } = req.body;
-  if(!username || !password) return next(createError(400, 'missing arguments'))
+  if (!username || !password) return next(createError(400, 'missing arguments'))
   const user = await User.findOne({ username });
-  if(!user) return next(createError(401));
+  if (!user) return next(createError(401));
   const isMatch = await user.verifyPassword(password).catch(console.error);
-  if(!isMatch) return next(createError(401));
-  const token= await user.generateToken();
-  res.send({ token,user });
+  if (!isMatch) return next(createError(401));
+  const token = await user.generateToken();
+  res.send({ token, user });
 });
 
 // protected end point
-router.get('/profile', authenticationMiddleware, (req, res, next)=>{
+router.get('/profile', authenticationMiddleware, (req, res, next) => {
   res.send(req.user);
 });
 
